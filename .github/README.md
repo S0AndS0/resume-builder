@@ -199,10 +199,10 @@ ______
 ## Contributing
 [heading__contributing]:
   #contributing
-  "&#x1F4C8; Options for contributing to public-resume and S0AndS0"
+  "&#x1F4C8; Options for contributing to resume-builder and S0AndS0"
 
 
-Options for contributing to public-resume and S0AndS0
+Options for contributing to resume-builder and S0AndS0
 
 
 ---
@@ -211,7 +211,7 @@ Options for contributing to public-resume and S0AndS0
 ### Forking
 [heading__forking]:
   #forking
-  "&#x1F531; Tips for forking public-resume"
+  "&#x1F531; Tips for forking resume-builder"
 
 
 Start making a [Fork][public_resume__fork_it] of this repository to an account
@@ -222,9 +222,9 @@ that you have write permissions for.
 
 
 ```Bash
-cd ~/git/hub/S0AndS0/public-resume
+cd ~/git/hub/S0AndS0/resume-builder
 
-git remote add fork git@github.com:<NAME>/public-resume.git
+git remote add fork git@github.com:<NAME>/resume-builder.git
 ```
 
 
@@ -232,7 +232,7 @@ git remote add fork git@github.com:<NAME>/public-resume.git
 
 
 ```Bash
-cd ~/git/hub/S0AndS0/public-resume
+cd ~/git/hub/S0AndS0/resume-builder
 
 
 git commit -F- <<'EOF'
@@ -272,7 +272,7 @@ git push fork main
 ### Sponsor
   [heading__sponsor]:
   #sponsor
-  "&#x1F4B1; Methods for financially supporting S0AndS0 that maintains public-resume"
+  "&#x1F4B1; Methods for financially supporting S0AndS0 that maintains resume-builder"
 
 
 Thanks for even considering it!
@@ -284,7 +284,7 @@ repeating basis.
 
 
 Regardless of if you're able to financially support projects such as
-public-resume that S0AndS0 maintains, please consider sharing projects that are
+resume-builder that S0AndS0 maintains, please consider sharing projects that are
 useful with others, because one of the goals of maintaining Open Source
 repositories is to provide value to the community.
 
@@ -389,45 +389,45 @@ terms/conditions/licensing agreement/copy-right.
   "&#x2696; Full length version of AGPL-3.0 License"
 
 [badge__license]:
-  https://img.shields.io/github/license/S0AndS0/public-resume
+  https://img.shields.io/github/license/S0AndS0/resume-builder
 
 [badge__commits__public_resume__main]:
-  https://img.shields.io/github/last-commit/S0AndS0/public-resume/main.svg
+  https://img.shields.io/github/last-commit/S0AndS0/resume-builder/main.svg
 
 [commits__public_resume__main]:
-  https://github.com/S0AndS0/public-resume/commits/main
+  https://github.com/S0AndS0/resume-builder/commits/main
   "&#x1F4DD; History of changes on this branch"
 
 
 [public_resume__community]:
-  https://github.com/S0AndS0/public-resume/community
+  https://github.com/S0AndS0/resume-builder/community
   "&#x1F331; Dedicated to functioning code"
 
 
 [issues__public_resume]:
-  https://github.com/S0AndS0/public-resume/issues
+  https://github.com/S0AndS0/resume-builder/issues
   "&#x2622; Search for and _bump_ existing issues or open new issues for project maintainer to address."
 
 [public_resume__fork_it]:
-  https://github.com/S0AndS0/public-resume/fork
+  https://github.com/S0AndS0/resume-builder/fork
   "&#x1F531; Fork it!"
 
 [pull_requests__public_resume]:
-  https://github.com/S0AndS0/public-resume/pulls
+  https://github.com/S0AndS0/resume-builder/pulls
   "&#x1F3D7; Pull Request friendly, though please check the Community guidelines"
 
 [public_resume__main__source_code]:
-  https://github.com/S0AndS0/public-resume/
+  https://github.com/S0AndS0/resume-builder/
   "&#x2328; Project source!"
 
 [badge__issues__public_resume]:
-  https://img.shields.io/github/issues/S0AndS0/public-resume.svg
+  https://img.shields.io/github/issues/S0AndS0/resume-builder.svg
 
 [badge__pull_requests__public_resume]:
-  https://img.shields.io/github/issues-pr/S0AndS0/public-resume.svg
+  https://img.shields.io/github/issues-pr/S0AndS0/resume-builder.svg
 
 [badge__main__public_resume__source_code]:
-  https://img.shields.io/github/repo-size/S0AndS0/public-resume
+  https://img.shields.io/github/repo-size/S0AndS0/resume-builder
 
 
 
@@ -444,8 +444,8 @@ terms/conditions/licensing agreement/copy-right.
 
 
 [badge__github_actions]:
-  https://github.com/S0AndS0/public-resume/actions/workflows/pages.yaml/badge.svg?branch=main
+  https://github.com/S0AndS0/resume-builder/actions/workflows/pages.yaml/badge.svg?branch=main
 
 [activity_log__github_actions]:
-  https://github.com/S0AndS0/public-resume/deployments/activity_log
+  https://github.com/S0AndS0/resume-builder/deployments/activity_log
 
