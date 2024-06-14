@@ -1,0 +1,44 @@
+{
+  "heading": "Contact Me",
+  "description": "You may use any of the following methods to collaborate with me",
+  "links": [
+    {
+      "name": "E-Mail",
+      "url": {
+        "protocol": "mailto:",
+        "link": "S0AndS0@digital-mercenaries.com"
+      },
+      "title": "Electronic mail is my preferred method of non-public asynchronous contact"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/S0AndS0/",
+      "title": "FOSS projects and documentation are published to GitHub Organizations that I administrate"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/s0ands0/",
+      "title": ""
+    },
+    {
+      "name": "Matrix",
+      "url": "https://matrix.to/#/@s0ands0:matrix.org",
+      "title": "Matrix is an open protocol for secure decentralized real time communication"
+    },
+    {
+      "name": "Mastodon",
+      "url": "https://mastodon.social/@S0AndS0",
+      "title": "Mastodon is free and open-source software for running self-hosted social networking services"
+    },
+    {
+      "name": "StackExchange",
+      "url": "https://stackexchange.com/users/3010672/s0ands0",
+      "title": "Nearly a decade of answering questions with a high rate of success"
+    },
+    {
+      "name": "Twitter",
+      "url": "https://twitter.com/S0_And_S0",
+      "title": "Where I share technical tips and tricks, often under 240 characters"
+    }
+  ]
+}

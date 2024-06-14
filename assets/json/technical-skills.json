@@ -1,0 +1,165 @@
+{
+  "title": "Technical Skills",
+  "description": "Since the days dial-up modems squealed I have been amassing archaean knowledge applicable to; software engineering, hardware hacking, and rapid prototyping.",
+  "hidden": false,
+  "sections": [
+    {
+      "heading": "Coding Languages",
+      "hidden": false,
+      "items": [
+        { "value": "Assembly", "hidden": true },
+        { "value": "Awk", "hidden": true },
+        { "value": "Bash", "hidden": false },
+        { "value": "Batch", "hidden": true },
+        { "value": "C", "hidden": true },
+        { "value": "C++", "hidden": true },
+        { "value": "CSS 2 & 3", "hidden": true },
+        { "value": "Ducky Script", "hidden": true },
+        { "value": "Go", "hidden": true },
+        { "value": "HTML", "hidden": true },
+        { "value": "JQ", "hidden": true },
+        { "value": "JSON", "hidden": true },
+        { "value": "Java", "hidden": true },
+        { "value": "JavaScript", "hidden": true },
+        { "value": "Kotlin", "hidden": true },
+        { "value": "LaTeX", "hidden": true },
+        { "value": "Liquid", "hidden": false },
+        { "value": "Make Script", "hidden": true },
+        { "value": "MarkDown", "hidden": true },
+        { "value": "MathJax", "hidden": true },
+        { "value": "Minecraft Functions", "hidden": true },
+        { "value": "Mustache", "hidden": true },
+        { "value": "Node JS", "hidden": true },
+        { "value": "PHP", "hidden": true },
+        { "value": "Pest", "hidden": true },
+        { "value": "Perl", "hidden": true },
+        { "value": "PowerShell", "hidden": true },
+        { "value": "Python 2 & 3", "hidden": false },
+        { "value": "Redstone", "hidden": true },
+        { "value": "RegExp", "hidden": true },
+        { "value": "Rockstar", "hidden": true },
+        { "value": "Ruby", "hidden": true },
+        { "value": "Rust", "hidden": false },
+        { "value": "SCSS / SASS (CSS)", "hidden": false },
+        { "value": "SQL", "hidden": false },
+        { "value": "Sed", "hidden": true },
+        { "value": "Solidity", "hidden": false },
+        { "value": "TypeScript", "hidden": false },
+        { "value": "Vim Script", "hidden": true },
+        { "value": "XML", "hidden": true },
+        { "value": "YAML", "hidden": true }
+      ]
+    },
+    {
+      "heading": "Containerization / Virtualisation",
+      "hidden": false,
+      "items": [
+        { "value": "AWS", "hidden": false },
+        { "value": "Digital Ocean", "hidden": false },
+        { "value": "Docker", "hidden": false },
+        { "value": "Firejail", "hidden": false },
+        { "value": "QEMU", "hidden": false },
+        { "value": "Vert Manager", "hidden": true },
+        { "value": "Virtual Box", "hidden": true },
+        { "value": "chroot", "hidden": true },
+        { "value": "proot", "hidden": true }
+      ]
+    },
+    {
+      "heading": "Continuous Integration / Delivery (CI/CD)",
+      "hidden": false,
+      "items": [
+        { "value": "Code Climate", "hidden": true },
+        { "value": "Dependabot", "hidden": true },
+        { "value": "Git Hooks", "hidden": false },
+        { "value": "GitHub Actions", "hidden": false },
+        { "value": "GitLab EE", "hidden": false },
+        { "value": "Jekyll", "hidden": true },
+        { "value": "LocalStack", "hidden": false },
+        { "value": "Travis CI", "hidden": true },
+        { "value": "Terraform", "hidden": false }
+      ]
+    },
+    {
+      "heading": "Multimedia",
+      "hidden": true,
+      "items": [
+        { "value": "Audacity", "hidden": false },
+        { "value": "Blender 3D", "hidden": false },
+        { "value": "Gimp", "hidden": false },
+        { "value": "FFmpeg", "hidden": false },
+        { "value": "Inkscape", "hidden": true },
+        { "value": "Photo Shop", "hidden": false },
+        { "value": "Simple Screen Recorder", "hidden": true }
+      ]
+    },
+    {
+      "heading": "Operating Systems",
+      "hidden": true,
+      "items": [
+        { "value": "Android", "hidden": false },
+        { "value": "Linux", "hidden": false },
+        { "value": "MacOS", "hidden": false },
+        { "value": "Palm OS", "hidden": true },
+        { "value": "Symbian 40 & 60", "hidden": false },
+        { "value": "TI-83", "hidden": true },
+        { "value": "Windows", "hidden": false }
+      ]
+    },
+    {
+      "heading": "Security Tools",
+      "hidden": false,
+      "items": [
+        { "value": "ClamAV", "hidden": false },
+        { "value": "Fail2Ban", "hidden": false },
+        { "value": "Metasploit", "hidden": false },
+        { "value": "Tripwire", "hidden": false },
+        { "value": "iptables", "hidden": false },
+        { "value": "rkhunter (Rootkit Hunter)", "hidden": false }
+      ]
+    },
+    {
+      "heading": "Server Administration",
+      "hidden": false,
+      "items": [
+        { "value": "Apache2", "hidden": true },
+        { "value": "Express JS", "hidden": true },
+        { "value": "Git", "hidden": true },
+        { "value": "GitLab", "hidden": false },
+        { "value": "Ganache", "hidden": true },
+        { "value": "NGiNX", "hidden": false },
+        { "value": "Open VPN", "hidden": false },
+        { "value": "PostgreSQL", "hidden": false },
+        { "value": "RDP", "hidden": true },
+        { "value": "SSH", "hidden": true },
+        { "value": "Systemd", "hidden": true },
+        { "value": "Unbound DNS", "hidden": false },
+        { "value": "VNC", "hidden": true },
+        { "value": "x11vnc", "hidden": true }
+      ]
+    },
+    {
+      "heading": "Miscellaneous Tools and Frameworks",
+      "hidden": false,
+      "items": [
+        { "value": "Chai JS", "hidden": true },
+        { "value": "ESLint", "hidden": false },
+        { "value": "Ethers JS", "hidden": true },
+        { "value": "IPFS", "hidden": true },
+        { "value": "Jekyll", "hidden": false },
+        { "value": "Jest JS", "hidden": false },
+        { "value": "jQuery", "hidden": true },
+        { "value": "LibreOffice", "hidden": true },
+        { "value": "Mocha JS", "hidden": false },
+        { "value": "Open Office", "hidden": true },
+        { "value": "React JS", "hidden": false },
+        { "value": "Substrate", "hidden": true },
+        { "value": "Truffle", "hidden": true },
+        { "value": "Vim", "hidden": true },
+        { "value": "Web3 JS", "hidden": true },
+        { "value": "Wordpress", "hidden": true },
+        { "value": "Yew", "hidden": true }
+      ]
+    }
+  ]
+}

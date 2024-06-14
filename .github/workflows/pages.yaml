@@ -1,0 +1,85 @@
+name: Lint and check
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - src/**/*.ts
+      - assets/css/style.css
+      - assets/json/*.json
+      - '@types/front-end/resume.d.ts'
+
+jobs:
+  check-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.7
+        with:
+          fetch-depth: 10
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.0.2
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install NodeJS dependencies
+        run: npm install
+
+      - name: Lint TypeScript files
+        shell: bash
+        run: npm run lint
+
+      - name: Check TypeScript files
+        shell: bash
+        run: npm run check
+
+      - name: Build TypeScript into JavaScript
+        shell: bash
+        run: npm run build
+
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@v1.7.1
+
+      - name: Background HTTP server
+        uses: JarvusInnovations/background-action@v1.0.7
+        with:
+          run: npm run serve &
+          wait-on: http://127.0.0.1:8080
+          wait-for: 1m
+          tail: true
+
+      - name: Print to PDF
+        run: npm run chromium-print-to-pdf -- --company 'Your Team ;-D' --job 'DevOops Engineer' --pdf-path _site/resume.pdf
+
+      ## Note we are relying on 'Print to PDF' above to create `_site/` directory
+      - name: Copy web-site
+        run: cp -rv index.html assets _site/
+
+      ## Outputs;
+      # - `artifact-id` accessible via REST API
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3.0.1
+
+  deploy:
+    # needs: build
+    needs: check-and-build
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    steps:
+      ## Outputs;
+      # - `page_url` The URL of the deployed Pages site
+      - name: Deploy GitHub Pages site
+        uses: actions/deploy-pages@v4.0.5
+

@@ -1,0 +1,462 @@
+
+:root {
+  --adjust__lighness__amount: 2.5%;
+  --adjust__lighness__operator: -;
+
+  --color__default__hue: 203.99;
+  --color__default__saturation: 4.42%;
+  --color__default__lighness: 17.22%;
+
+  --background-color__default__hue: 96.00;
+  --background-color__default__saturation: 6.84%;
+  --background-color__default__lightness: 95.68%;
+
+  --section__background-color__nth2__hue: 96.00;
+  --section__background-color__nth2__saturation: 6.84%;
+  --section__background-color__nth2__lightness: calc(
+    var(--background-color__default__lightness)
+    var(--adjust__lighness__operator)
+    var(--adjust__lighness__amount)
+  );
+
+  --section__background-color__nth3__hue: 96.00;
+  --section__background-color__nth3__saturation: 6.84%;
+  --section__background-color__nth3__lightness: calc(
+    var(--section__background-color__nth2__lightness)
+    var(--adjust__lighness__operator)
+    var(--adjust__lighness__amount)
+  );
+}
+
+
+:root,
+*,
+*::after,
+*::before {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+* + * {
+  margin-top: 0.5rem;
+}
+
+
+/* ========================================================================= */
+
+
+.container:empty::after {
+  content: 'Empty element! -> #' attr(id);
+  color: red;
+  font-weight: bolder;
+}
+
+
+#container__copyright:empty::after {
+  content: "\00a9 All Rights Reserved";
+}
+
+
+/* ========================================================================= */
+
+
+html {
+  height: 100%;
+  background-color: hsl(
+    var(--background-color__default__hue),
+    var(--background-color__default__saturation),
+    var(--background-color__default__lightness)
+  );
+
+  color: hsl(
+    var(--color__default__hue),
+    var(--color__default__saturation),
+    var(--color__default__lighness)
+  );
+}
+
+body {
+  margin-top: unset;
+  margin-bottom: unset;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 85rem;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+main {
+  flex-grow: 1;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: unset;
+  padding: 0.75rem;
+  /* padding: 1rem; */
+  flex-grow: 1;
+  break-inside: avoid;
+}
+
+p,
+strong {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+ul {
+  margin-top: unset;
+  page-break-inside: avoid;
+}
+
+li {
+  inline-size: max-content;
+  margin-left: 1rem;
+}
+
+footer {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* ========================================================================= */
+
+
+footer::before,
+main article::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding-bottom: 2.5rem;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-top-color: black;
+  border-top-style: groove;
+}
+
+section:nth-child(3n),
+section:nth-child(7n){
+  background-color: hsl(
+    var(--section__background-color__nth3__hue),
+    var(--section__background-color__nth3__saturation),
+    var(--section__background-color__nth3__lightness)
+  );
+}
+
+section:nth-child(2n),
+section:nth-child(6n) {
+  background-color: hsl(
+    var(--section__background-color__nth2__hue),
+    var(--section__background-color__nth2__saturation),
+    var(--section__background-color__nth2__lightness)
+  );
+}
+
+
+/* ========================================================================= */
+
+
+.container__page_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+article > header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section > header {
+  margin-left: unset;
+}
+
+.section__list__container > strong:only-child {
+  display: none;
+}
+
+
+/* ========================================================================= */
+
+
+.time_range__container {
+  margin-top: unset;
+  padding-left: 1em;
+}
+
+.time_range__from::after {
+  content: ' →';
+  padding: 0.15rem;
+}
+
+.time_range__difference::before {
+  content: '≈ ';
+}
+
+
+/* ========================================================================= */
+
+
+#container__contact_methods ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  list-style: none;
+  padding-left: unset;
+}
+
+#container__contact_methods li {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* ========================================================================= */
+
+
+@media screen and (min-width: 30rem) {
+  section > header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  .article__header,
+  .article__header .heading,
+  .article__header .description,
+  #container__contact_methods .heading,
+  #container__contact_methods .description,
+  #article__character_references .heading,
+  #article__character_references .description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .list__calumniated {
+    column-count: 2;
+  }
+}
+
+
+@media screen and (min-width: 40rem) {
+  section > header {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  #container__professional_training,
+  #container__technical_skills,
+  #container__character_references,
+  #container__professional_experiences {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  #container__professional_training > section,
+  #container__character_references > section,
+  #container__professional_experiences > section {
+    width: calc(100% * (1/2));
+  }
+
+  #container__professional_training > section:nth-child(4n),
+  #container__professional_training > section:nth-child(9n),
+  #container__character_references > section:nth-child(4n),
+  #container__character_references > section:nth-child(9n),
+  #container__professional_experiences > section:nth-child(4n),
+  #container__professional_experiences > section:nth-child(9n) {
+    background-color: unset;
+  }
+}
+
+
+@media screen and (min-width: 50rem) {
+  .list__calumniated {
+    column-count: 3;
+  }
+
+  #container__contact_methods,
+  #container__technical_experiences {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  #container__contact_methods > section ,
+  #container__technical_experiences > section {
+    width: calc(100% * (1/2));
+  }
+
+  #container__contact_methods > section:nth-child(4n),
+  #container__contact_methods > section:nth-child(9n),
+  #container__technical_experiences > section:nth-child(4n),
+  #container__technical_experiences > section:nth-child(9n) {
+    background-color: unset;
+  }
+}
+
+
+@media screen and (min-width: 60rem) {
+  :not(#container__contact_methods) > section > header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+
+/* ========================================================================= */
+
+
+@media print {
+  main {
+    position: relative !important;
+  }
+
+  article {
+    page-break-inside: avoid;
+    position: relative !important;
+  }
+
+  /**
+   * @note
+   * - Page break settings seem to work best on Firefox
+   * - Chrome seems to require more _encouragement_ to respect page break hints
+   *
+   * @see {link} https://www.w3.org/TR/css-break-3/
+   */
+  section {
+    display: inline-block;
+    box-decoration-break: clone;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    widows: 9001;
+    orphans: 9001;
+
+    position: relative !important;
+  }
+
+  #container__copyright {
+    display: none;
+    visibility: hidden;
+  }
+
+
+  section > header {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-direction: column;
+  }
+  :not(#container__contact_methods) > section > header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .heading__contact,
+  .heading__reference,
+  .description__contact,
+  .description__reference {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .description__contact,
+  .article__description {
+    text-align: center;
+  }
+
+  .list__calumniated {
+    column-count: 3;
+  }
+
+  #container__character_references,
+  #container__professional_training,
+  #container__professional_experiences,
+  #container__technical_experiences {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  #container__character_references > section,
+  #container__professional_training > section,
+  #container__professional_experiences > section,
+  #container__technical_experiences > section {
+    width: calc(100% * (1/2));
+  }
+
+  footer::before,
+  main article::before {
+    border-top-color: unset;
+    border-top-style: unset;
+    display: none;
+    visibility: hidden;
+  }
+
+  #container__character_references > section:nth-child(4n),
+  #container__character_references > section:nth-child(9n),
+  #container__professional_experiences > section:nth-child(4n),
+  #container__professional_experiences > section:nth-child(9n),
+  #container__professional_training > section:nth-child(4n),
+  #container__professional_training > section:nth-child(9n),
+  #container__technical_experiences > section:nth-child(4n),
+  #container__technical_experiences > section:nth-child(9n) {
+    background-color: unset;
+  }
+
+  /**
+   * https://stackoverflow.com/questions/52546246/remove-timestamp-and-page-url-from-pdf-created-with-headless-chrome
+   */
+  body {
+    margin: 0;
+  }
+
+  @page {
+    size: A4;
+    /* size: auto; */
+    margin: 0;
+  }
+}
+
+
+/* ========================================================================= */
+
+
+.proompt_injection {
+  height: 1px;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  color: white;
+  font-size: 1px;
+}
+

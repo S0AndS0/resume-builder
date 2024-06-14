@@ -1,0 +1,388 @@
+{
+  "title": "Technical Experiences",
+  "description": "Under my given pseudonym I have built a brand over the past ten(+) years of; publishing programming projects publicly, sharing technical tips, and contributing to FOSS organizations.",
+  "sections": [
+    {
+      "heading": "3D Printing",
+      "hidden": true,
+      "description": "Documentation and Blender 3D plugin source code for interacting with networked 3D printers and file exporting",
+      "links": [
+        {
+          "name": "Git Repository",
+          "url": "https://github.com/S0AndS0/3D_Printing"
+        }
+      ]
+    },
+    {
+      "heading": "Adaptive iptables",
+      "hidden": true,
+      "description": "Linux iptables automation that seamlessly integrates with SystemD for real-time adaptation of firewall rules based on the state of services, ensuring optimal security and performance.",
+      "links": [
+        {
+          "name": "Git Repository",
+          "url": "https://github.com/paranoid-linux/adaptive-iptables"
+        }
+      ]
+    },
+    {
+      "heading": "Address Storage",
+      "hidden": true,
+      "description": "Implemented a smart contract using Solidity map data structures, enabling efficient storage and interaction with key/value address pairs.",
+      "links": [
+        {
+          "name": "Git Repository",
+          "url": "https://github.com/solidity-utilities/address-storage"
+        },
+        {
+          "name": "NPM",
+          "url": "https://www.npmjs.com/package/@solidity-utilities/address-storage"
+        }
+      ]
+    },
+    {
+      "heading": "Algorithms and Data Structures",
+      "hidden": true,
+      "description": "Publishing a collection of extensive example algorithms, and data structures, written in Go and TypeScript programming languages; to aid developers learning either.",
+      "links": [
+        {
+          "name": "Git Repository",
+          "url": "https://github.com/S0AndS0/algorithms-and-data-structures"
+        }
+      ]
+    },
+    {
+      "heading": "Arti",
+      "hidden": true,
+      "description": "Contributed to an implementation of Tor written in Rust, by addressing linter warnings, implementing CI/CD automation through Git Hooks, and enhancing the Wiki documentation for improved accessibility and usability.",
+      "links": [
+        {
+          "name": "Git Repository",
+          "url": "https://gitlab.torproject.org/S0AndS0/arti"
+        }
+      ]
+    },
+    {
+      "heading": "Bored Box Batch Sender",
+      "hidden": true,
+      "description": "Developed a powerful tool for efficiently sending `ERC721` and/or `ERC1155` tokens to multiple recipients. Utilized advanced blockchain technologies and smart contracts to streamline the process, resulting in faster and more cost-effective transactions.",
+      "links": [
+        {
+          "name": "Contract Code",
+          "url": "https://etherscan.io/address/0x4610ada32B41aA761aEFBD97Ea65d0F76949B9CD#code#F1#L1"
+        }
+      ]
+    },
+    {
+      "heading": "Bored Box Extras",
+      "hidden": true,
+      "description": "Designed and implemented an optimized `ERC721` token contract, enabling multi-recipient minting functionality. Utilized Solidity and Polygon blockchain technology to ensure secure and efficient transactions.",
+      "links": [
+        {
+          "name": "Contract Code",
+          "url": "https://polygonscan.com/address/0x62a1e71941c06b9e85012e3c5080f5d5948eef14#code"
+        }
+      ]
+    },
+    {
+      "heading": "Bored Box NFT",
+      "hidden": true,
+      "description": "Developed an optimized, and partially upgradable, `ERC721` Solidity smart contract for the Ethereum blockchain.",
+      "links": [
+        {
+          "name": "Contract Code",
+          "url": "https://etherscan.io/address/0x09d05293264edf390cd3cbd8cc86532207ae30b0#code"
+        }
+      ]
+    },
+    {
+      "heading": "Configure Vim",
+      "hidden": true,
+      "description": "Improved productivity and efficiency by customizing and configuring Vim, a powerful text editor, to suit personal preferences and workflow.  Implemented keybindings, plugins, and themes to enhance coding experience and streamline development processes.",
+      "links": [
+        {
+          "name": "Git Repository",
+          "url": "https://github.com/S0AndS0/configure-vim"
+        }
+      ]
+    },
+    {
+      "heading": "Curriculum Vitae",
+      "hidden": false,
+      "description": "Public CV with CI/CD magics to generate and publish PDF automatically to GitHub Pages whenever source content changes",
+      "links": [
+        {
+          "name": "Git Repository",
+          "url": "https://github.com/S0AndS0/curriculum-vitae"
+        },
+        {
+          "name": "Rendered PDF",
+          "url": "https://S0AndS0.github.io/curriculum-vitae/curriculum-vitae.pdf"
+        }
+      ]
+    },
+    {
+      "heading": "Execution Permissions",
+      "hidden": true,
+      "description": "Developed and deployed a free to use Solidity contract that enables fine-grained control over function execution permissions.",
+      "links": [
+        {
+          "name": "Git Repository",
+          "url": "https://github.com/solidity-utilities/execution-permissions"
+        },
+        {
+          "name": "Contract Code",
+          "url": "https://etherscan.io/address/0x90f94E4Fa212Aafb4d9528c3A064815B3378c8b9#code"
+        }
+      ]
+    },
+    {
+      "heading": "Feed JSON",
+      "hidden": true,
+      "description": "Created a JSON feed generator, Feed JSON, using Jekyll collection and Liquid layout to extract data from FrontMatter and generate a dynamic JSON feed.",
+      "links": [
+        {
+          "name": "Git Repository",
+          "url": "https://github.com/liquid-utilities/feed-json"
+        }
+      ]
+    },
+    {
+      "heading": "Hybrid Iterator",
+      "hidden": true,
+      "description": "Developed a Python 2/3 compatible iterator that combines the functionality of a dictionary and an iterator.",
+      "links": [
+        {
+          "name": "Git Repository",
+          "url": "https://github.com/python-utilities/hybrid-iterator"
+        }
+      ]
+    },
+    {
+      "heading": "Inject JavaScript",
+      "hidden": true,
+      "description": "Utilized tools such as PyPDF2 to seamlessly inject JavaScript code into the body of PDF documents; allowing for dynamic and interactive functionality within PDFs, enhancing user experience and enabling advanced data manipulation.",
+      "links": [
+        {
+          "name": "Git Repository",
+          "url": "https://github.com/pdf-utilities/inject_javascript"
+        },
+        {
+          "name": "Python Package Index",
+          "url": "https://pypi.org/project/inject-javascript/"
+        }
+      ]
+    },
+    {
+      "heading": "Install Linux on USB",
+      "hidden": true,
+      "description": "Published a comprehensive guide that provides detailed instructions on how to install Linux to a USB drive with UEFI boot capabilities. Utilized Virtual Box and other select technologies to ensure a seamless installation process.",
+      "links": [
+        {
+          "name": "Git Repository",
+          "url": "https://github.com/install-linux-guides/usb-uefi-compatible"
+        },
+        {
+          "name": "Web site",
+          "url": "https://install-linux-guides.github.io/usb-uefi-compatible/"
+        }
+      ]
+    },
+    {
+      "heading": "Iterate Text",
+      "hidden": true,
+      "description": "Developed a robust Rust library that provides a collection of helper functions and structures for efficient iteration over text and files.",
+      "links": [
+        {
+          "name": "Git Repository",
+          "url": "https://github.com/rust-utilities/iterate-text"
+        },
+        {
+          "name": "Crate Registry",
+          "url": "https://crates.io/crates/iterate-text"
+        }
+      ]
+    },
+    {
+      "heading": "Iterator Cascade Callbacks",
+      "hidden": true,
+      "description": "JavaScript/TypeScript library providing Rust-like ergonomics for working with iterables. Implemented powerful methods such as `.filter` and `.map` to streamline data manipulation and transformation processes.",
+      "links": [
+        {
+          "name": "Git Repository",
+          "url": "https://github.com/javascript-utilities/iterator-cascade-callbacks/"
+        },
+        {
+          "name": "NPM",
+          "url": "https://www.npmjs.com/package/iterator-cascade-callbacks"
+        }
+      ]
+    },
+    {
+      "heading": "Jekyll Admin",
+      "hidden": true,
+      "description": "Culminates a combination of Git, Jekyll, and other relevant technologies to streamline repository management, facilitate collaboration, and simplify the process of publishing websites.",
+      "links": [
+        {
+          "name": "Git Repository",
+          "url": "https://github.com/S0AndS0/Jekyll_Admin"
+        },
+        {
+          "name": "Documentation",
+          "url": "https://s0ands0.github.io/Jekyll_Admin/"
+        }
+      ]
+    },
+    {
+      "heading": "Opentensor -- Docs",
+      "hidden": true,
+      "description": "Revamped and maintained a comprehensive documentation resource for configuring Subtensor network nodes and interacting with customized Substrate blockchain. Collaborated with a team to fix formatting issues, update broken links, and rectified Bash scripting errors, resulting in improved user experience and accessibility.",
+      "links": [
+        {
+          "name": "Git Repository",
+          "url": "https://github.com/opentensor/docs/"
+        }
+      ]
+    },
+    {
+      "heading": "Python First Library",
+      "hidden": true,
+      "description": "Developed and published a comprehensive step-by-step guide with source code, to assist Python developers in seamlessly publishing their packages to PyPi.",
+      "links": [
+        {
+          "name": "Git Repository",
+          "url": "https://github.com/development-tutorials/python-first-library"
+        },
+        {
+          "name": "Documentation",
+          "url": "https://development-tutorials.github.io/python-first-library/"
+        }
+      ]
+    },
+    {
+      "heading": "Python Graph Theory",
+      "hidden": true,
+      "description": "Developed an extensive open-source repository demonstrating a range of graph algorithms and techniques. Leveraged core Python features, without relying on third-party libraries, to provide valuable insights for researchers and aspiring software developers.",
+      "links": [
+        {
+          "name": "Git Repository",
+          "url": "https://github.com/S0AndS0/python-graph-theory"
+        },
+        {
+          "name": "Documentation",
+          "url": "https://s0ands0.github.io/python-graph-theory/graph/2019/04/02/points-00-preface.html"
+        }
+      ]
+    },
+    {
+      "heading": "SASS Build",
+      "hidden": false,
+      "description": "Published a project that is utilized by over two-hundred projects to leverage the power of GitHub Actions, and CSS transpiler technology, to streamline the CI/CD process for developers.",
+      "links": [
+        {
+          "name": "Git Repository",
+          "url": "https://github.com/gha-utilities/sass-build"
+        },
+        {
+          "name": "Market Place",
+          "url": "https://github.com/marketplace/actions/sass-build"
+        }
+      ]
+    },
+    {
+      "heading": "Shellchecker",
+      "hidden": true,
+      "description": "Developed a convenient shebang wrapper that executes a script only if the `shellcheck` tool does not detect any errors.",
+      "links": [
+        {
+          "name": "Git Repository",
+          "url": "https://github.com/paranoid-linux/shellchecker"
+        }
+      ]
+    },
+    {
+      "heading": "Subtensor",
+      "hidden": true,
+      "description": "Improved the performance and stability of a Blockchain built on the Substrate node template. Leveraged a wide range of tools and technologies to ensure seamless integration and optimal performance, including (but not limited to) `shellcheck`, GitHub Actions, Git Hooks, and code coverage reporting.",
+      "links": [
+        {
+          "name": "Git Repository",
+          "url": "https://github.com/opentensor/subtensor/"
+        },
+        {
+          "name": "Documentation",
+          "url": "https://github.com/opentensor/subtensor/blob/main/docs/rust-setup.md"
+        }
+      ]
+    },
+    {
+      "heading": "Toxic Cookies",
+      "hidden": true,
+      "description": "Developed a JavaScript/TypeScript tool specifically designed for Quality Assurance developers and ethical penetration testers. This tool allows users to poison browser cookies of the currently loaded domain, providing valuable insights into potential security vulnerabilities.",
+      "links": [
+        {
+          "name": "Git Repository",
+          "url": "https://github.com/javascript-utilities/toxic-cookies"
+        }
+      ]
+    },
+    {
+      "heading": "Trap Failure",
+      "hidden": true,
+      "description": "Improved error handling and debugging process by creating a Bash script that provides advanced formatting and inspection capabilities for trapped errors. Utilized various shell builtins, and string manipulation techniques, to enhance error reporting, including custom stack trace error messages, and error code identification.",
+      "links": [
+        {
+          "name": "Git Repository",
+          "url": "https://github.com/bash-utilities/trap-failure"
+        }
+      ]
+    },
+    {
+      "heading": "Tweet Archive to MarkDown",
+      "hidden": false,
+      "description": "Authored Rust library for parsing Twitter archive ZIP files to convert Tweets into MarkDown files with FrontMatter for use within static site generators such as Jekyll",
+      "links": [
+        {
+          "name": "Crates dot IO",
+          "url": "https://crates.io/crates/twitter-archive"
+        },
+        {
+          "name": "Git Repository",
+          "url": "https://github.com/rust-utilities/tweet-archive-to-markdown"
+        }
+      ]
+    },
+    {
+      "heading": "Validate Mint Signature",
+      "hidden": true,
+      "description": "Developed and implemented a Solidity smart contract to ensure the authenticity and secure transmission of off-chain signed authentication. Utilized advanced cryptographic techniques, EVM assembly, and algorithms to verify signatures, preventing potential mempool theft.",
+      "links": [
+        {
+          "name": "Contract Code",
+          "url": "https://etherscan.io/address/0x61028d1761EB2b911dB0Dc012d2fd8b31336C3a7#code"
+        }
+      ]
+    },
+    {
+      "heading": "Vendor Prefixes",
+      "hidden": true,
+      "description": "Developed and implemented a comprehensive set of SCSS mixins for CSS vendor prefixes; which streamline the process of writing cross-browser compatible CSS code, resulting in improved browser compatibility and reduced development time.",
+      "links": [
+        {
+          "name": "Git Repository",
+          "url": "https://github.com/scss-utilities/vendor-prefixes"
+        }
+      ]
+    },
+    {
+      "heading": "View ERC721",
+      "hidden": false,
+      "description": "A free smart contract that efficiently batches up-to three-thousand off-chain calls for on-chain data into a single request; resulting in performance improvements and reduced network overhead.",
+      "links": [
+        {
+          "name": "Contract Code",
+          "url": "https://etherscan.io/address/0xc6b2675F484931CA7D3771881Ef7bD28c51dd00a#code"
+        }
+      ]
+    }
+  ]
+}

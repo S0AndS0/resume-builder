@@ -1,0 +1,91 @@
+{
+  "title": "Professional Experiences",
+  "description": "For twenty(+) years I've contributed my skills and talents to; five startups, three non-profits, and seven large to small companies.  The following be a sample of somewhat relevant history.",
+  "sections": [
+    {
+      "heading": "Digital Mercenaries LLC",
+      "hidden": false,
+      "description": "Developed and deployed a high-performance and simple to maintain website, leveraging both frontend and backend technologies, while ensuring seamless integration with CI/CD pipelines.",
+      "date": {
+        "comment": "Redacted from/to",
+        "difference": "1+ years (Current)"
+      },
+      "items": [
+        "Chief Technology Officer (CTO)",
+        "Lead Fullstack Engineer"
+      ],
+      "links": [
+        {
+          "name": "Website",
+          "url": "https://www.digital-mercenaries.com/"
+        }
+      ]
+    },
+    {
+      "heading": "Opentensor Foundation",
+      "hidden": false,
+      "description": "Led a team of talented Rust software engineers in the development an internet-scale neural network incentivized by blockchain technologies.",
+      "date": {
+        "comment": "Redacted from/to",
+        "difference": "3+ months"
+      },
+      "items": [
+        "Lead Blockchain Rust Engineer",
+        "Project Manager"
+      ],
+      "links": [
+        {
+          "name": "docs -- contributions",
+          "url": "https://github.com/opentensor/docs/commits?author=S0AndS0"
+        },
+        {
+          "name": "subtensor -- contributions",
+          "url": "https://github.com/opentensor/subtensor/pulls?q=is%3Apr+author%3AS0AndS0"
+        }
+      ]
+    },
+    {
+      "heading": "Bored Box dot IO",
+      "hidden": false,
+      "description": "Developed backend, blockchain, and CI/CD infrastructure for efficiently and securely delivering assets to a global customers.",
+      "date": {
+        "comment": "Redacted from/to",
+        "difference": "1+ years"
+      },
+      "items": [
+        "Lead Backend Developer",
+        "Senior Blockchain Developer"
+      ],
+      "links": [
+        {
+          "name": "Twitter",
+          "url": "https://twitter.com/BoredBox_/"
+        },
+        {
+          "name": "BoredBoxNFT",
+          "url": "https://etherscan.io/address/0x09d05293264edf390cd3cbd8cc86532207ae30b0#code"
+        }
+      ]
+    },
+    {
+      "heading": "BitBiz dot IO",
+      "hidden": false,
+      "description": "Before terms such as \"DApp\" or \"DAO\" where coined, I led a team of forum moderators and consulted for a variety of crypto businesses",
+      "date": {
+        "comment": "Redacted from/to",
+        "difference": "2+ years"
+      },
+      "items": [
+        "Forum Moderator",
+        "Technical Writer",
+        "Lead Technology Officer"
+      ],
+      "links": [
+        {
+          "name": "Website (Archived)",
+          "url": "https://web.archive.org/web/20160309133004/http://bitbiz.io/"
+        }
+      ]
+    }
+  ]
+}
