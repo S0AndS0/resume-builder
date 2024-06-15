@@ -185,11 +185,19 @@ files, a group of HTML elements, or a discreet action that needs preformed.
 #### `assets/json/` directory
 [heading__assetsjson_directory]: #assetsjson-directory
 
-The `json/` directory collects content of various components of resulting
+The `json/` directory collects content for various components of resulting
 Résumé, as well as defines visibility for sub-sections.  This facilitates swift
 per company customizations, by toggling `hidden` states, while also allowing
 adventurous content consumers to query data almost as though it were served
 from an API.
+
+#### `@types/front-end/resume.d.ts` file
+[heading__typesfrontendresumedts_file]: #typesfrontendresumedts-file
+
+The `resume.d.ts` file provides hints, and maybe lies, to TypeScript about the
+structure of various JSON files...  Or in other words major changes to JSON
+structure must be accompanied by updates to the `resume.d.ts` file to ensure
+JavaScript interpreters do not throw dumb errors.
 
 
 ______
