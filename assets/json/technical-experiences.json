@@ -15,7 +15,7 @@
     },
     {
       "heading": "Adaptive iptables",
-      "hidden": true,
+      "hidden": false,
       "description": "Linux iptables automation that seamlessly integrates with SystemD for real-time adaptation of firewall rules based on the state of services, ensuring optimal security and performance.",
       "links": [
         {
@@ -327,7 +327,7 @@
     },
     {
       "heading": "Trap Failure",
-      "hidden": true,
+      "hidden": false,
       "description": "Improved error handling and debugging process by creating a Bash script that provides advanced formatting and inspection capabilities for trapped errors. Utilized various shell builtins, and string manipulation techniques, to enhance error reporting, including custom stack trace error messages, and error code identification.",
       "links": [
         {
