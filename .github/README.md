@@ -6,8 +6,7 @@
 
 Résumé builder using pure CSS, HTML, JSON, and a sprinkling of TypeScript
 
-## [![Byte size of Public Résumé][badge__main__public_resume__source_code]][public_resume__main__source_code] [![Open Issues][badge__issues__public_resume]][issues__public_resume] [![Open Pull Requests][badge__pull_requests__public_resume]][pull_requests__public_resume] [![Latest commits][badge__commits__public_resume__main]][commits__public_resume__main] [![License][badge__license]][branch__current__license]
-<!-- [![GitHub Actions Build Status][badge__github_actions]][activity_log__github_actions] --> 
+## [![Byte size of Public Résumé][badge__main__public_resume__source_code]][public_resume__main__source_code] [![Open Issues][badge__issues__public_resume]][issues__public_resume] [![Open Pull Requests][badge__pull_requests__public_resume]][pull_requests__public_resume] [![Latest commits][badge__commits__public_resume__main]][commits__public_resume__main] [![License][badge__license]][branch__current__license] [![GitHub Actions Build Status][badge__github_actions]][activity_log__github_actions] 
 
 
 ---
@@ -429,19 +428,12 @@ terms/conditions/licensing agreement/copy-right.
 [badge__main__public_resume__source_code]:
   https://img.shields.io/github/repo-size/S0AndS0/resume-builder
 
-
-
-
-
-
 [sponsor__shields_io__liberapay]:
   https://img.shields.io/static/v1?logo=liberapay&label=Sponsor&message=S0AndS0
 
 [sponsor__link__liberapay]:
   https://liberapay.com/S0AndS0
   "&#x1F4B1; Sponsor developments and projects that S0AndS0 maintains via Liberapay"
-
-
 
 [badge__github_actions]:
   https://github.com/S0AndS0/resume-builder/actions/workflows/pages.yaml/badge.svg?branch=main
