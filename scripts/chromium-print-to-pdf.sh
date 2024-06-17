@@ -8,6 +8,9 @@
 # - go-yq
 # - jq
 # - okular
+#
+# Yay
+# - pup
 ##
 
 ## Find true directory this script resides in
@@ -137,14 +140,53 @@ if ! (( ${#_job_title} )); then
 	exit 1
 fi
 
-## Default optional parameters
+## Helper functions
 
-if ! (( ${#_applicant_name} )); then
-	_applicant_name="$( jq --raw-output '.title | split("[^\\w]+";"g")[0]' "${__G_DIR__}/assets/json/page-header.json" )"
-fi
+get__applicant_name() {
+	local _url="${1:?Undefined URL}"
+	local _json_dir
+	local _json_path
+	local _index_dir
+	local _applicant_name
+
+	local _index_path="${_url#*//*/}"
+	_index_dir="${_index_path%/*}"
+	_index_path="${_index_path:-index.html}"
+
+	_json_dir="${__G_DIR__}/${_index_dir}"
+	_json_path="$(pup '#page__header json{}' --file "${_index_path}" | jq --raw-output '.[0]."data-json-path"')"
+
+	_applicant_name="$( jq --raw-output '.title | split("[^\\w]+";"g")[0]' "${_json_dir}/${_json_path}" )"
+
+	if (( _verbose )) || (( _dry_run )); then
+		cat >&2 <<EOF
+## get__applicant_name parsed variables
+_url -> ${_url}
+_index_path -> ${_index_path}
+_index_dir -> ${_index_dir}
+_json_dir -> ${_json_dir}
+_json_path -> ${_json_path}
+_applicant_name -> ${_applicant_name}
+EOF
+	fi
+
+	if (( ${#_applicant_name} )); then
+		printf '%s' "${_applicant_name}"
+	else
+		printf >&2 'Undefined --applicant-name <VALUE> and failed to parse from URL -> %s\n' "${_url}"
+		return 1
+	fi
+}
+
+## Default optional parameters
 
 if ! (( ${#_url} )); then
 	_url='http://127.0.0.1:8080/'
+fi
+
+if ! (( ${#_applicant_name} )); then
+	# _applicant_name="$( jq --raw-output '.title | split("[^\\w]+";"g")[0]' "${__G_DIR__}/assets/json/page-header.json" )"
+	_applicant_name="$(get__applicant_name "${_url}")"
 fi
 
 if ! (( ${#_pdf_path} )); then
@@ -193,12 +235,24 @@ _chromium_bin="${_chromium_bin:-$(which chrome)}"
 ## Do the things
 
 if (( _dry_run )) || (( _verbose )); then
-	printf >&2 '"%s" %s "%s"\n' "${_chromium_bin}" "${_chromium_args[*]}" "${_url}"
+	cat >&2 <<EOF
+## Print to PDF via
+"${_chromium_bin}" ${_chromium_args[@]} "${_url}"
+EOF
+	# printf >&2 '"%s" %s "%s"\n' "${_chromium_bin}" "${_chromium_args[*]}" "${_url}"
 	if (( _copy_to_tor )); then
-		printf >&2 'cp "%s" "%s"' "${_pdf_path}" "${_tor_path}"
+		cat >&2 <<EOF
+## Copy to Tor browser downloads
+cp "${_pdf_path}" "${_tor_path}"
+EOF
+		# printf >&2 'cp "%s" "%s"' "${_pdf_path}" "${_tor_path}"
 	fi
 	if (( _preview )); then
-		printf >&2 'okular "%s"\n' "${_pdf_path}"
+	cat >&2 <<EOF
+## Preview with okular
+okular "${_pdf_path}"
+EOF
+		# printf >&2 'okular "%s"\n' "${_pdf_path}"
 	fi
 fi
 
