@@ -96,7 +96,7 @@ ______
    ```
 - Check if/when a company has been applied to
    ```bash
-   npm run --silent has-applied-to -- 'Company Name'
+   npm run --silent has-applied-to -- Company Name
    ```
 - Generate PDFs after customizing `assets/json/` files and/or `index.html` file
    ```bash
