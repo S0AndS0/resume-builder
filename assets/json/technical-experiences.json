@@ -244,6 +244,17 @@
       ]
     },
     {
+      "heading": "Parinoid Pipes",
+      "hidden": true,
+      "description": "Implemented an encrypt on write system using GPG, and named pipes, ensuring data privacy and security on remote services though public/private key based encryption.",
+      "links": [
+        {
+          "name": "Git Repository",
+          "url": "https://github.com/S0AndS0/Perinoid_Pipes"
+        }
+      ]
+    },
+    {
       "heading": "Python First Library",
       "hidden": true,
       "description": "Developed and published a comprehensive step-by-step guide with source code, to assist Python developers in seamlessly publishing their packages to PyPi.",
