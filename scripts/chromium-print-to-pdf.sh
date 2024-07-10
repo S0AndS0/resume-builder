@@ -40,6 +40,10 @@ usage(){
 	Defaults to: http://127.0.0.1:8080/
 	Note: for _reasions_ Chromium based browsers do not like localhost redirects
 
+--alias <STRING>
+	Pass as query/search string to 'url' to modify contact methods with a
+	'mailto:' protocol via client-side JavaScript
+
 --pdf-path <PATH>
 	Defaults to: ~/Downloads/resumes/$(date +%F)/<NAME>_Resume_to_<COMPANY>_for_<JOB>.pdf
 
@@ -62,6 +66,7 @@ usage(){
 ## Example
 
 ${__NAME__} --preview \\
+  --alias 'example.com' \\
   --company 'Company Name' \\
   --job 'Job Title' \\
   --dry-run
@@ -95,6 +100,10 @@ while ((${#@})); do
 		;;
 		--pdf-path)
 			_pdf_path="${2:?No --pdf-path value provided}"
+			shift 2;
+		;;
+		--alias|--email-alias)
+			_email_alias="${2:?No email alias value provided}"
 			shift 2;
 		;;
 		--copy-to-tor)
@@ -178,6 +187,39 @@ EOF
 	fi
 }
 
+get__applicant_email() {
+	local _url="${1:?Undefined URL}"
+	local _json_dir
+	local _json_path
+	local _index_dir
+	local _applicant_email
+
+	local _index_path="${_url#*//*/}"
+	_index_dir="${_index_path%/*}"
+	_index_path="${_index_path:-index.html}"
+
+	_json_dir="${__G_DIR__}/${_index_dir}"
+	_json_path="$(pup '#container__contact_methods json{}' --file "${_index_path}" | jq --raw-output '.[0]."data-json-path"')"
+
+	_applicant_email="$( jq --raw-output '.links[] | select(.name == "E-Mail") | .url.link' "${_json_dir}/${_json_path}" )"
+
+	if (( _verbose )) || (( _dry_run )); then
+		cat >&2 <<EOF
+## get__applicant_email parsed variables
+_url -> ${_url}
+_index_path -> ${_index_path}
+_index_dir -> ${_index_dir}
+_json_dir -> ${_json_dir}
+_json_path -> ${_json_path}
+_applicant_email -> ${_applicant_email}
+EOF
+	fi
+
+	if (( ${#_applicant_email} )); then
+		printf '%s' "${_applicant_email}"
+	fi
+}
+
 ## Default optional parameters
 
 if ! (( ${#_url} )); then
@@ -234,35 +276,54 @@ _chromium_bin="${_chromium_bin:-$(which chrome)}"
 
 ## Do the things
 
+if ((${#_email_alias})); then
+	_applicant_email="$(get__applicant_email "${_url}")"
+	if ! ((${#_applicant_name})); then
+		printf >&2 'Failed to parse email for URL -> %s\n' "${_url}"
+		exit 1
+	fi
+	if ((${#_email_alias})); then
+		_applicant_email="$(awk -F '@' -v _email_alias="${_email_alias}" '{
+			print $1 "+" _email_alias "@" $2;
+		}' <<<"${_applicant_email}")"
+	fi
+fi
+
 if (( _dry_run )) || (( _verbose )); then
 	cat >&2 <<EOF
 ## Print to PDF via
-"${_chromium_bin}" ${_chromium_args[@]} "${_url}"
+"${_chromium_bin}" ${_chromium_args[@]} "${_url}?email-alias=${_email_alias}" 1>/dev/null 2>&1
 EOF
-	# printf >&2 '"%s" %s "%s"\n' "${_chromium_bin}" "${_chromium_args[*]}" "${_url}"
 	if (( _copy_to_tor )); then
 		cat >&2 <<EOF
 ## Copy to Tor browser downloads
 cp "${_pdf_path}" "${_tor_path}"
 EOF
-		# printf >&2 'cp "%s" "%s"' "${_pdf_path}" "${_tor_path}"
 	fi
 	if (( _preview )); then
 	cat >&2 <<EOF
 ## Preview with okular
 okular "${_pdf_path}"
 EOF
-		# printf >&2 'okular "%s"\n' "${_pdf_path}"
+	fi
+	if ((${#_applicant_name})); then
+		cat >&2 <<EOF
+## Apply with email address
+${_applicant_email}
+EOF
 	fi
 fi
 
 if ! (( _dry_run )); then
-	"${_chromium_bin}" "${_chromium_args[@]}" "${_url}"
+	"${_chromium_bin}" "${_chromium_args[@]}" "${_url}?email-alias=${_email_alias}" 1>/dev/null 2>&1
 	if (( _copy_to_tor )); then
 		cp "${_pdf_path}" "${_tor_path}"
 	fi
 	if (( _preview )); then
 		okular "${_pdf_path}"
+	fi
+	if ((${#_applicant_name})); then
+		printf 'E-Mail: %s\n' "${_applicant_email}"
 	fi
 fi
 
