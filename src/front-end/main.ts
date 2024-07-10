@@ -4,11 +4,14 @@ import { pageHeader } from './lib/page-header';
 import { pageFooter } from './lib/page-footer';
 import { contactMethods } from './lib/contact-methods';
 import { modifyArticle } from './lib/modify-article';
+import { windowLocationSearchParamsToObject } from './lib/window-location-search-params-to-object'
 
 /**
  *
  */
 window.addEventListener('load', (_event) => {
+  const search_params = windowLocationSearchParamsToObject();
+
   pageHeader({
     container_selector: '#page__header',
   }).catch((error) => {
@@ -23,6 +26,7 @@ window.addEventListener('load', (_event) => {
 
   contactMethods({
     container_selector: '#container__contact_methods',
+    search_params,
   }).catch((error) => {
     console.error(error);
   });

@@ -8,8 +8,10 @@ import { fetchJson } from './fetch-json';
  */
 export async function contactMethods({
   container_selector,
+  search_params,
 }: {
   container_selector: string;
+  search_params: { [key: string]: string };
 }): Promise<Resume.Contact_Methods> {
   const container = document.querySelector(container_selector) as HTMLDivElement;
 
@@ -71,7 +73,17 @@ export async function contactMethods({
         typeof link_data.url.protocol === 'string' &&
         typeof link_data.url.link === 'string'
       ) {
-        anchor.href = `${link_data.url.protocol}${link_data.url.link}`;
+        if (
+          link_data.url.protocol === 'mailto:' &&
+          !link_data.url.link.includes('+') &&
+          search_params['email-alias']?.length
+        ) {
+          const [email_name, email_url] = link_data.url.link.split('@');
+          const email_alias = search_params['email-alias'];
+          anchor.href = `${link_data.url.protocol}${email_name}+${email_alias}@${email_url}`;
+        } else {
+          anchor.href = `${link_data.url.protocol}${link_data.url.link}`;
+        }
       }
       anchor.innerText = link_data.name;
 
