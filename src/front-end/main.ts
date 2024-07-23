@@ -55,6 +55,7 @@ window.addEventListener('load', (_event) => {
       container_selector,
       json_path,
       template_id,
+      search_params,
     }).catch((error) => {
       console.error({
         error,

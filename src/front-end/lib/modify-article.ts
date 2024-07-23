@@ -148,11 +148,16 @@ export async function modifyArticle({
   container_selector,
   json_path,
   template_id,
+  search_params,
 }: {
   article_id: string;
   container_selector: string;
   json_path: string;
   template_id: string;
+  search_params: {
+    [key: string]: string | undefined;
+    tags?: string;
+  };
 }): Promise<void> {
   const article = document.getElementById(article_id) as HTMLElement;
 
@@ -227,10 +232,11 @@ export async function modifyArticle({
       // collection not an Array, and conversion would be wasteful
       for (const section__list of section.querySelectorAll('.list')) {
         if (!section__list.classList.contains('list__links') && section_data.items?.length) {
+          // Likely dealing with data similar to `assets/json/technical-skills.json`
           const hidden_items: [string, boolean][] = [];
 
           section_data.items.forEach((item_data) => {
-            const [item_value, item_hidden] = ((item: typeof item_data) => {
+            let [item_value, item_hidden] = ((item: typeof item_data) => {
               switch (typeof item) {
                 case 'string': {
                   return [item, false];
@@ -251,6 +257,14 @@ export async function modifyArticle({
             if (item_hidden) {
               hidden_items.push([item_value, item_hidden]);
               return;
+            }
+
+            // Add bold MarkDown syntax when tag is and skill are matched
+            if (
+              search_params?.tags?.length &&
+              search_params.tags.toLowerCase().match(item_value.toLowerCase())?.length
+            ) {
+              item_value = `**${item_value}**`;
             }
 
             const list__item = document.createElement('li') as HTMLLIElement;
@@ -277,6 +291,8 @@ export async function modifyArticle({
             section__list.appendChild(list__item);
           }
         } else if (section__list.classList.contains('list__links') && section_data.links?.length) {
+          // Likely dealing with data similar to `assets/json/professional-experiences.json`
+          // or `assets/json/technical-experiences.json`
           section_data.links.forEach((link_data) => {
             if (![link_data.name, link_data.url].every((x) => !!x)) {
               console.warn('Skipping link ->', { link_data });
@@ -309,6 +325,7 @@ export async function modifyArticle({
             section__list.appendChild(list__item);
           });
         } else if (section__list) {
+          // Warn we do not yet handle this case before trying next chunk of data
           console.warn('Removing list element from ->', { section });
           section__list.parentNode?.removeChild(section__list);
         }
@@ -319,3 +336,4 @@ export async function modifyArticle({
     });
   });
 }
+// vim: expandtab
