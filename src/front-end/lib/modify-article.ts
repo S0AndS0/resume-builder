@@ -260,11 +260,17 @@ export async function modifyArticle({
             }
 
             // Add bold MarkDown syntax when tag is and skill are matched
-            if (
-              search_params?.tags?.length &&
-              search_params.tags.toLowerCase().match(item_value.toLowerCase())?.length
-            ) {
-              item_value = `**${item_value}**`;
+            if (search_params.tags?.length) {
+              const tags_decoded = decodeURIComponent(search_params.tags);
+              const tags_sanitized = tags_decoded
+                .toLowerCase()
+                .replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+                .replace(/,/g, '|');
+
+              const tags_expression = new RegExp(tags_sanitized);
+              if (tags_expression.test(item_value.toLowerCase())) {
+                item_value = `**${item_value}**`;
+              }
             }
 
             const list__item = document.createElement('li') as HTMLLIElement;
