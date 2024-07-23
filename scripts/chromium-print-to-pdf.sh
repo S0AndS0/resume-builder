@@ -44,6 +44,10 @@ usage(){
 	Pass as query/search string to 'url' to modify contact methods with a
 	'mailto:' protocol via client-side JavaScript
 
+--tags <STRING>
+	Pass comma seperated list of tags as query/search string to 'url' for hinting
+	to client-side JavaScript which skills/projects to highlght
+
 --pdf-path <PATH>
 	Defaults to: ~/Downloads/resumes/$(date +%F)/<NAME>_Resume_to_<COMPANY>_for_<JOB>.pdf
 
@@ -104,6 +108,10 @@ while ((${#@})); do
 		;;
 		--alias|--email-alias)
 			_email_alias="${2:?No email alias value provided}"
+			shift 2;
+		;;
+		--tags)
+			_tags="${2:?No tags value provided}"
 			shift 2;
 		;;
 		--copy-to-tor)
@@ -220,6 +228,24 @@ EOF
 	fi
 }
 
+build_query_string() {
+	local _query_string=''
+
+	if ((${#_email_alias})); then
+		_query_string+="email-alias=${_email_alias}"
+	fi
+
+	if ((${#_tags})); then
+		if ((${#_email_alias})); then
+			_query_string+="&tags=${_tags}"
+		else
+			_query_string+="tags=${_tags}"
+		fi
+	fi
+
+	printf '%s' "${_query_string}"
+}
+
 ## Default optional parameters
 
 if ! (( ${#_url} )); then
@@ -274,7 +300,7 @@ _chromium_args=(
 _chromium_bin="$(which chromium)"
 _chromium_bin="${_chromium_bin:-$(which chrome)}"
 
-## Do the things
+## Build dynamic variables
 
 if ((${#_email_alias})); then
 	_applicant_email="$(get__applicant_email "${_url}")"
@@ -289,10 +315,18 @@ if ((${#_email_alias})); then
 	fi
 fi
 
+_query_string="$(build_query_string)"
+
+if ((${#_query_string})); then
+	_url+="?${_query_string}"
+fi
+
+## Do the things
+
 if (( _dry_run )) || (( _verbose )); then
 	cat >&2 <<EOF
 ## Print to PDF via
-"${_chromium_bin}" ${_chromium_args[@]} "${_url}?email-alias=${_email_alias}" 1>/dev/null 2>&1
+"${_chromium_bin}" ${_chromium_args[@]} "${_url}" 1>/dev/null 2>&1
 EOF
 	if (( _copy_to_tor )); then
 		cat >&2 <<EOF
@@ -315,7 +349,7 @@ EOF
 fi
 
 if ! (( _dry_run )); then
-	"${_chromium_bin}" "${_chromium_args[@]}" "${_url}?email-alias=${_email_alias}" 1>/dev/null 2>&1
+	"${_chromium_bin}" "${_chromium_args[@]}" "${_url}" 1>/dev/null 2>&1
 	if (( _copy_to_tor )); then
 		cp "${_pdf_path}" "${_tor_path}"
 	fi
