@@ -1,4 +1,5 @@
 # Changelog
+[heading__changelog]: #changelog
 
 
 All notable changes to this project will be documented in this file.
@@ -8,6 +9,7 @@ The format is based on [Keep a Changelog][] and this project adheres to
 
 
 ## [Unreleased]
+[heading__unreleased]: #unreleased
 
 
 - [ ] Check code for consistency of JSON data accessors
@@ -18,12 +20,14 @@ The format is based on [Keep a Changelog][] and this project adheres to
 
 
 ## [0.0.1] - 2024-06-14
+[heading__001_20240614]: #001-20240614
 
 
 Publish first pubic version of Résumé builder!
 
 
 ### Added
+[heading__added]: #added
 
 
 - Start maintaining versions and a changelog.
