@@ -228,18 +228,24 @@ EOF
 	fi
 }
 
+##
+# https://stackoverflow.com/questions/296536/how-to-urlencode-data-for-curl-command
+url_encode_string() {
+	jq -Rr '@uri' <<<"${1:?No string to URL encode}"
+}
+
 build_query_string() {
 	local _query_string=''
 
 	if ((${#_email_alias})); then
-		_query_string+="email-alias=${_email_alias}"
+		_query_string+="email-alias=$(url_encode_string "${_email_alias}")"
 	fi
 
 	if ((${#_tags})); then
 		if ((${#_email_alias})); then
-			_query_string+="&tags=${_tags}"
+			_query_string+="&tags=$(url_encode_string "${_tags}")"
 		else
-			_query_string+="tags=${_tags}"
+			_query_string+="tags=$(url_encode_string "${_tags}")"
 		fi
 	fi
 
